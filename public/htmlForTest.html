@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+</head>
+<body>
+<script src="../src/idb.js"></script>
+<script>
+   async function test() {
+      try {
+         const db = await idb.openCostsDB("costsdb", 4);
+         console.log("db opened");
+         const result1 = await db.addCost({sum: 200, category: "HOUSING", description: "rent for 01.2023"});
+         console.log("first addCost");
+         const result2 = await db.addCost({sum: 300, category: "FOOD", description: "food for weekend"});
+         console.log("second addCost");
+
+         if (db) {
+            console.log("Creating db succeeded");
+         }
+
+         if (result1) {
+            console.log("Adding 1st cost succeeded");
+         }
+
+         if (result2) {
+            console.log("Adding 2nd cost succeeded");
+         }
+      } catch (error) {
+         console.error("Error:", error);
+      }
+   }
+
+   test();
+</script>
+</body>
+</html>
