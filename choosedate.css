@@ -1,4 +1,44 @@
+.chooseDateContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #F0F7F4;
+  border: 2px solid #32292F;
+  border-radius: 10px;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+}
 
+.chooseDateDiv,
+.generateReportDiv,
+.closeReportDiv {
+  flex: 1;
+  background-color: #99E1D9;
+  border: 2px solid #32292F;
+  border-radius: 10px;
+  padding: 20px;
+  color: #32292F;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.chooseDateDiv:hover,
+.generateReportDiv:hover,
+.closeReportDiv:hover {
+  background-color: #32292F;
+  color: #F0F7F4;
+}
+
+
+
+
+
+/*
 .chooseDateDiv {
     height: 5%;
     width: 100%;
@@ -46,3 +86,4 @@
     background-color: rgb(28, 57, 108);
     transform: scale(0.95);
   }
+*/

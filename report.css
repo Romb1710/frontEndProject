@@ -1,4 +1,95 @@
+.formDiv {
+    width: 100%;
+    max-width: 800px;
+    background-color: #424C55;
+    border: 2px solid #D1CCDC;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #424C55;
+    font-size: 16px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
 
+.formDiv:hover {
+    transform: scale(1.02);
+    background-color: #DFF8EB;
+}
+
+.costsFormInputLabel {
+    width: 100%;
+    height: 30px;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #60A17F;
+}
+
+.costsFormInputLabel:hover {
+    background-color: #60A17F;
+    color: white;
+    cursor: pointer;
+}
+
+.costsFormInputLabel .textDiv {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.costsFormInput {
+    width: 50%;
+    border-radius: 10px;
+    height: 75%;
+    transition: all 0.3s ease;
+    border: 1px solid #60A17F;
+}
+
+.costsFormInput:hover {
+    border: 2px solid #60A17F;
+}
+
+.formBtn {
+    width: 30%;
+    height: 30px;
+    background-color: #DFF8EB;
+    color: #424C55;
+    font-size: larger;
+    border: none;
+    border-radius: 20px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.formBtn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.formBtn:active {
+    background-color: #206F6B;
+    transform: scale(0.95);
+}
+
+
+/*
 .reportDiv {
     height: 95%;
     width: 100%;
@@ -16,6 +107,7 @@
     height: 100%;
     width: 100%;
     /* background-color: rgb(255, 255, 255); */
+/*
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(116,8,60,1) 33%, rgba(9,9,121,1) 35%, rgba(7,65,158,1) 53%, rgba(0,212,255,1) 100%);
     display: flex;
     justify-content: flex-start;
@@ -26,9 +118,15 @@
   .graphDiv {
     height: 100%;
     width: 500px;
+
+ */
+
     /* background-color: rgb(222, 223, 225); */
+/*
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
+
+ */

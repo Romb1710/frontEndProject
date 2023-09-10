@@ -32,6 +32,7 @@ const CostsForm = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const db = await idb.openCostsDB("costsdb", 4);
+        console.log('db1:', db); // Add this line
         db.addCost(currCost)
             .then(() => {
             setCosts([...costs, currCost]);
@@ -54,7 +55,7 @@ const CostsForm = (props) => {
           });
 
          */
-      };
+      }
 
     //function that renders the table after submit with use effect
     useEffect(() => {

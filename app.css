@@ -1,5 +1,114 @@
-/*Eylam Kadden 206516957
- Oren Pinhasov 318552734*/
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #F0F7F4;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainDiv {
+  flex: 0.9;
+  background-color: #A38F9C;
+  border: 2px solid #D1CCDC;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #424C55;
+  font-size: 16px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+.graphAndTableContainer {
+  flex: 0.3;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.graphDiv {
+  width: 50%;
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid #D1CCDC;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Updated button styles */
+.button {
+  padding: 10px 20px;
+  background-color: #DFF8EB;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: #F0F7F4;
+  transform: scale(1.05);
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reportButton {
+  width: 48%;
+  height: 30px;
+  background-color: #DFF8EB;
+  color: #424C55;
+  font-size: 12px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.reportButton:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.reportButton:active {
+  background-color: #206F6B;
+  transform: scale(0.95);
+}
+
+
+
+
+
+/*
 html {
   height: 100%;
   width: 100%;
@@ -94,8 +203,10 @@ body {
 
 .tableRow:nth-child(odd) {
   /* background-color: rgb(11, 138, 66); set a different color for odd rows */
+/*
   background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
+
 
 .Table td {
   width: 100%;
@@ -106,3 +217,5 @@ body {
   border-right: 1px solid black;
   border-bottom: 1px solid black;
 } 
+
+*/

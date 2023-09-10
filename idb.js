@@ -11,7 +11,7 @@ export class idb {
 
             request.onsuccess = (event) => {
                 const db = event.target.result;
-                console.log("Database opened successfully:", db);
+                //console.log("Database opened successfully:", db);
                 resolve(new idb(db));
             };
 
@@ -22,7 +22,7 @@ export class idb {
 
             request.onupgradeneeded = (event) => {
                 const db = event.target.result;
-                console.log("test");
+                //console.log("test");
                 // Create the "costs" object store if it doesn't exist
                 if (!db.objectStoreNames.contains("costs")) {
                     db.createObjectStore("costs", { keyPath: "id", autoIncrement: true });
@@ -40,10 +40,25 @@ export class idb {
     }
 
     async getCost() {
+
         const transaction = this.db.transaction("costs", "readonly");
-        const store = transaction.objectStore("costs");
-        return await store.getAll();
+        const store = await transaction.objectStore("costs");
+        const result = await store.getAll();
+        return new Promise((resolve, reject) => {
+            result.onsuccess = (event) => {
+                const res2 = event.target.result;
+               // console.log("result:", res2);
+                resolve(res2);
+            };
+            result.onerror = (event) => {
+                console.error("Error opening database:", event.target.error);
+                reject(event.target.error);
+            };
+        })
+       // console.log("the result is: ", result);
+        return result;
     }
+
 }
 
 //export default idb;

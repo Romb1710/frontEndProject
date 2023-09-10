@@ -1,13 +1,15 @@
-// Eylam Kadden 206516957
-// Oren Pinhasov 318552734
+
 import ReportBarChart from './ReportBarChart';
 import { useEffect, useState } from 'react';
 import './report.css';
 
 // component that displays the report
 const Report = (props) => {
+    //console.log("displayedCosts in Report:", props.displayedCosts);
+    // colors for the bar chart
+    const barChartColors = ['red', 'yellow', 'orange', 'pink', 'brown', 'grey', 'black'];
 
-    // function that formats the data for the pie chart
+    // function that formats the data for the bar chart
     const formatDataForGraph = (displayedCosts) => {
         let categoryCount = {};
         displayedCosts?.forEach((cost) => {
@@ -17,19 +19,23 @@ const Report = (props) => {
                 categoryCount[cost.Category] = Number(cost.Sum);
         });
         let formattedData = []
+        let index = 0;
         Object.keys(categoryCount)?.forEach((category) => {
             if (category === undefined || category === null || category === '')
                 category = 'Other';
-            formattedData.push({ Category: category, Sum: categoryCount[category] });
+
+            formattedData.push({ Category: category, Sum: categoryCount[category], fill: barChartColors[index % barChartColors.length] });
+            index +=1;
         });
+
         return formattedData;
     }
 
     //const barChartColors = ['red', 'yellow', 'orange', 'pink', 'brown', 'grey', 'black'];
 
-    const [data, setData] = useState(); // data for the pie chart (category and sum)
+    const [data, setData] = useState(); // data for the Bar chart (category and sum)
 
-    // update the data for the pie chart when the displayed costs change
+    // update the data for the bar chart when the displayed costs change
     useEffect(() => { setData(formatDataForGraph(props.displayedCosts)); }, [props.displayedCosts]);
 
     return (
@@ -45,11 +51,11 @@ const Report = (props) => {
                     {props.displayedCosts?.map((cost, index) => {
                         return (
                             <tr className='tableRow' key={index}>
-                                <td>{cost.Category}</td>
-                                <td>{cost.Quantity}</td>
-                                <td>{cost.Description}</td>
-                                <td>{cost.Sum}</td>
-                                <td>{cost.Date}</td>
+                                <td key='Category{index}'>{cost.Category}</td>
+                                <td key='Quantity{index}'>{cost.Quantity}</td>
+                                <td key='Description{index}'>{cost.Description}</td>
+                                <td key='Sum{index}'>{cost.Sum}</td>
+                                <td key='Date{index}'>{cost.Date}</td>
                             </tr>
                         );
                     })}

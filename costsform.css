@@ -1,4 +1,17 @@
-
+.formBtn {
+    width: 30%;
+    height: 30px;
+    background-color: #DFF8EB;
+    color: #424C55;
+    font-size: 12px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+/*
 .formDiv {
     display: flex;
     height: 95%;
@@ -84,3 +97,6 @@
     background-color: rgb(28, 57, 108);
     transform: scale(0.95);
   }
+
+
+ */

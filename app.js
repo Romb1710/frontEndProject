@@ -1,6 +1,5 @@
 
 import React, { useState } from "react";
-//import { getData } from "./localstorage";
 import { idb } from './idb';
 import ChooseDate from "./choosedate";
 import Report from "./report";
@@ -36,10 +35,14 @@ function App() {
 
     // function that handles the change of the year selection
     const handleReportGeneration = async () => {
+
         setVisible(false);
         const db = await idb.openCostsDB("costsdb", 4);
+        //console.log('db:', db); // Add this line
+
         db.getCost()
             .then(costs => {
+                console.log('costs:', costs); // Add this line
                 let filteredCosts = costs.filter(cost => {
                     let date = new Date(cost.Date);
                     return date.getMonth() === selectedMonth && date.getFullYear() === selectedYear;
