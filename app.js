@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { idb } from './idb';
+import { idb } from './idbForReact';
 import ChooseDate from "./choosedate";
 import Report from "./report";
 import CostsForm from "./costsform";

@@ -1,8 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
 //import { saveData } from './localstorage';
-import { idb } from './idb';
-import {CostItem, capitalizeFirstLetter} from './costitem.js';
+import { idb } from './idbForReact';
+import {CostItem} from './costitem.js';
 import './costsform.css';
 
 // form component that renders the form and the table with the costs

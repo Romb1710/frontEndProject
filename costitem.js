@@ -4,7 +4,7 @@
 class CostItem {
     constructor(Category, Quantity, Description, Sum, Date) 
     {
-        this.Category = capitalizeFirstLetter(Category);
+        this.Category = Category;
         this.Quantity = Quantity || 1;
         this.Description = Description || "No description";
         this.Sum = Sum;
@@ -24,12 +24,7 @@ const setDefaultDate = () => {
 }
 
 // Function to capitalize first letter of a string so the report won't have duplicates
-const capitalizeFirstLetter = (word) => {
-    if (word === undefined)
-        return "Other";
-    const fixedWord = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-    return fixedWord;
-}
 
-export { CostItem, capitalizeFirstLetter };
+
+export { CostItem };
 
